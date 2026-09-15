@@ -7,7 +7,7 @@
 > người trong nhóm gán khác nhau, gần như luôn là vì file này chưa nói rõ — chứ
 > không phải vì ai kém.
 
-Nhóm / tên: `...`
+Nhóm / tên: `Nguyễn Phúc Đại`
 Clip: `clip_01`, `clip_02`
 
 ---
@@ -23,13 +23,13 @@ Một lớp duy nhất: **`vehicle`** — xe bốn bánh (xe con, van, xe buýt,
 | xe buýt, minibus | **xe máy / mô tô** |
 | xe tải, xe đầu kéo | xe trong ảnh quảng cáo, trong gương, dưới bóng nước |
 
-Bổ sung của nhóm (nếu có): `...`
+Bổ sung của nhóm (nếu có): `gán nhãn cả xe đỗ bên lề`
 
 ## 2. Luật ID — phần quan trọng nhất
 
 | Tình huống | Luật của nhóm | Vì sao |
 | --- | --- | --- |
-| Xe bị che một phần rồi hiện lại | giữ nguyên ID nếu bị che **dưới ... frame** (mặc định của lab: 25 frame = 2 giây @ 12.5 fps) | `...` |
+| Xe bị che một phần rồi hiện lại | giữ nguyên ID nếu bị che **dưới 25 frame** (mặc định của lab: 25 frame = 2 giây @ 12.5 fps) | `...` |
 | Xe bị che lâu hơn ngưỡng trên | `...` | `...` |
 | Xe rời khung hình rồi quay lại | mặc định: **track mới** | `...` |
 | Hai xe cắt nhau / chồng lên nhau | `...` | `...` |
