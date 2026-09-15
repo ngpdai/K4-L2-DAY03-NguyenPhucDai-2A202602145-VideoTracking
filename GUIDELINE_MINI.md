@@ -29,10 +29,10 @@ Bổ sung của nhóm (nếu có): `gán nhãn cả xe đỗ bên lề`
 
 | Tình huống | Luật của nhóm | Vì sao |
 | --- | --- | --- |
-| Xe bị che một phần rồi hiện lại | giữ nguyên ID nếu bị che **dưới 25 frame** (mặc định của lab: 25 frame = 2 giây @ 12.5 fps) | `...` |
-| Xe bị che lâu hơn ngưỡng trên | `...` | `...` |
-| Xe rời khung hình rồi quay lại | mặc định: **track mới** | `...` |
-| Hai xe cắt nhau / chồng lên nhau | `...` | `...` |
+| Xe bị che một phần rồi hiện lại | giữ nguyên ID nếu bị che **dưới 25 frame** (mặc định của lab: 25 frame = 2 giây @ 12.5 fps) | `Duy trì tính liên tục của hành trình chuyển động (trajectory) đối với vật thể bị occlusion ngắn` |
+| Xe bị che lâu hơn ngưỡng trên | Ngắt track cũ. Khi xe xuất hiện lại, gán ID mới. | Tránh gán sai identity (ID switch) khi vật thể khuất tầm nhìn quá lâu dẫn đến mất dấu. |
+| Xe rời khung hình rồi quay lại | mặc định: **track mới** | Đảm bảo tính nhất quán theo quy chuẩn tracking tiêu chuẩn của bài tập |
+| Hai xe cắt nhau / chồng lên nhau | Xe ở phía trước giữ nguyên bbox và ID. Xe bị che phía sau thu hẹp bbox ôm phần nhìn thấy được | Giữ đúng quy tắc chỉ annotate pixel/phần nhìn thấy thực tế (visible region).   |
 
 ## 3. Luật bbox
 
@@ -41,8 +41,8 @@ Bổ sung của nhóm (nếu có): `gán nhãn cả xe đỗ bên lề`
 | Xe bị cắt bởi rìa ảnh | bbox chạm đúng rìa, không đoán phần ngoài ảnh |
 | Xe bị xe khác che một phần | bbox ôm phần **nhìn thấy được** |
 | Xe vừa xuất hiện, còn rất nhỏ / rất mờ | bắt đầu track từ frame đầu tiên xác định được là xe bốn bánh; ngưỡng nhóm chọn: `...` |
-| Xe đang đỗ, không di chuyển | `...` |
-| Keyframe đặt dày ở đâu | `...` |
+| Xe đang đỗ, không di chuyển | Giữ nguyên bbox và ID từ frame bắt đầu đến frame kết thúc xuất hiện trong clip. |
+| Keyframe đặt dày ở đâu | Đặt dày keyframe ở các đoạn xe chuyển hướng (rẽ/quay đầu), thay đổi tốc độ đột ngột, hoặc khi xe bắt đầu/kết thúc bị che khuất. |
 
 ## 4. Ít nhất ba ca mơ hồ đã gặp thật
 
@@ -70,5 +70,5 @@ Ghi **frame cụ thể** và **ID cụ thể**, không ghi chung chung.
 
 Luật nào trong file này hoá ra còn thiếu hoặc còn mơ hồ? Viết lại cho rõ:
 
-- `...`
-- `...`
+- Bổ sung rõ ngưỡng kích thước tối thiểu cho xe ở quá xa (tối thiểu $10 \times 10$ pixels) để tránh tình trạng một số thành viên gán nhãn cho các điểm ảnh mờ chưa rõ dạng xe
+- Lập quy tắc thống nhất cho xe đang đỗ bên đường: bắt buộc phải tạo track dài liên tục chứ không gán từng frame đơn lẻ để tránh bị nhảy ID.
