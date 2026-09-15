@@ -49,22 +49,22 @@ Bổ sung của nhóm (nếu có): `gán nhãn cả xe đỗ bên lề`
 Ghi **frame cụ thể** và **ID cụ thể**, không ghi chung chung.
 
 ### Ca 1
-- Clip / frame / ID: `...`
-- Tình huống: `...`
-- Quyết định: `...`
-- Lý do: `...`
+- Clip / frame / ID: clip_01
+- Tình huống: ô tô con đi song song xe bus
+- Quyết định: gán nhãn khi mui xe phía trước lộ rõ
+- Lý do: không thể gán nhãn chỉ dựa vào ánh đèn thông qua kính
 
 ### Ca 2
-- Clip / frame / ID: `...`
-- Tình huống: `...`
-- Quyết định: `...`
-- Lý do: `...`
+- Clip / frame / ID: clip_01
+- Tình huống: xe van đi theo sau xe bus
+- Quyết định: gán nhãn ngay khi có bộ phận lộ ra
+- Lý do: đặc tính thân xe hình hộp chữ nhật
 
 ### Ca 3
-- Clip / frame / ID: `...`
-- Tình huống: `...`
-- Quyết định: `...`
-- Lý do: `...`
+- Clip / frame / ID: clip_02
+- Tình huống: 2 học sinh chở nhau đi bằng xe điện
+- Quyết định: không gán nhãn
+- Lý do: không phải phương tiện 4 bánh
 
 ## 5. Sửa gì sau khi chấm với gold và sau khi kiểm chéo
 
